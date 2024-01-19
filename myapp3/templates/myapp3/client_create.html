@@ -1,0 +1,12 @@
+
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Create a new client</h2>
+  <form method="post" action="{% url 'myapp:client_create' %}">
+    {% csrf_token %}
+    
+    <input type="submit" value="Create Client">
+  </form>
+{% endblock %}

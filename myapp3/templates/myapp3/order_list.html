@@ -1,0 +1,27 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Список заказанных товаров {{ client_id }}</h2>
+
+  <h3>За последние 7 дней (неделю)</h3>
+  <ul>
+    {% for product in products_last_week %}
+      <li>{{ product.name }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>За последние 30 дней (месяц)</h3>
+  <ul>
+    {% for product in products_last_month %}
+      <li>{{ product.name }}</li>
+    {% endfor %}
+  </ul>
+
+  <h3>За последние 365 дней (год)</h3>
+  <ul>
+    {% for product in products_last_year %}
+      <li>{{ product.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock %}
